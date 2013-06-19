@@ -207,6 +207,15 @@ public class AGRIF2AGRIS
 					agris.append( "</dc:language>\n" ) ;
 				}
 			}
+			if( expression.containsKey( "fullCitation" ) )
+			{
+				JSONArray fullCitations = (JSONArray) expression.get( "fullCitation" ) ;
+				for ( Object obj10: fullCitations )
+				{
+					agris.append( "    <dc:source>" + (String)obj10 + "</dc:source>\n" ) ;
+				}
+			}
+			
 			if ( expression.containsKey( "citation" ) )
 			{
 				JSONArray citations = (JSONArray) expression.get( "citation" ) ;
